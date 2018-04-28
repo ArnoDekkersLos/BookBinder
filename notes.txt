@@ -1,0 +1,31 @@
+
+
+Collecting spirit stones:
+Verzoek moet naar:
+GET: https://www.webnovel.com/apiajax/SpiritStone/addSSAjax
+met de verwachte response:
+{"code":0,"data":{"addedSS":9,"SS":9},"msg":"Success"}
+bij fout:
+{"code":1,"msg":"Fail"}
+
+om op een boek te subscriben heb ik nodig: de 2 id's en een valid csrfToken(wrsch krijg je bij het inloggen)
+om te kijken of er een nieuw hoofdstuk is:
+is er in de json data.bookInfo.newChapterIndex die een chap count terug geeft
+verder is er een data.bookInfo.newChapterTime met hierin een string bv: "1 hours ago" die aangeeft wanneer laatste chap was(wrsch niet gebruiken)
+
+Het ophalen van een hoofdstuk overzicht van een boek:
+https://www.webnovel.com/apiajax/chapter/GetChapterList?_csrfToken=ujthCJxaQY8mPhKXSWo1NSyaLuSfFkn6XKWmx0WY&bookId=7176992105000305&_=1524342958176
+https://www.webnovel.com/apiajax/chapter/GetChapterList?_csrfToken=ujthCJxaQY8mPhKXSWo1NSyaLuSfFkn6XKWmx0WY&bookId=6831850602000905&_=1524343801844
+#ToDo wat is laatste property en veranderd deze?
+
+ophalen van een hoofdstuk:
+https://www.webnovel.com/book/7176992105000305/19453999690351712/The-King's-Avatar/The-Banished-Battle-God
+hierbij is het book/{bookID}/{contentJson.volumeItems.chapterItems.id}/{bookName()replace " " "-"}/contentJson.volumeItems.chapterItems.name
+
+het resultaat hiervan is xml... jammer maar gaat vast wel is lukken
+
+Verschil ingelogt:
+De "Cookie" header
+
+Account 1:
+hans.wijnen001@gmail.com webww: 7894561230 gmail: Q!7894561230
